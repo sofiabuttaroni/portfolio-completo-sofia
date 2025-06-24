@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-} 
+}
 
 body {
   font-family: "Segoe UI", sans-serif;
@@ -161,26 +161,6 @@ section p {
   margin: 0.5rem auto;
   width: fit-content;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
-  display: flex;
-  align-items: center;
-}
-
-/* HAMBURGER MENU */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-  margin-left: auto;
-}
-
-.menu-toggle span {
-  display: block;
-  height: 3px;
-  background-color: white; /* LINEE BIANCHE */
-  border-radius: 2px;
 }
 
 .sticky-nav ul {
@@ -212,34 +192,6 @@ section p {
   border-color: #ff2e4e;
 }
 
-@media (max-width: 768px) {
-  .sticky-nav ul {
-    display: none;
-    flex-direction: column;
-    background: linear-gradient(135deg, #ff758c, #ff9966);
-    border: 2px solid white;
-    border-radius: 16px;
-    margin-top: 10px;
-    padding: 1rem;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
-    position: absolute;
-    right: 1rem;
-    top: 60px;
-    z-index: 999;
-  }
-
-  .sticky-nav.open ul {
-    display: flex;
-  }
-
-  .sticky-nav a {
-    color: white;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-}
 
 /* Footer - stile identico alla barra in header */
 .footer {
@@ -283,7 +235,7 @@ section p {
 .contact {
   max-width: 900px;
   margin: 2rem auto;
-  background: #ffffff;
+  background: #fff;
   padding: 2rem;
   border-left: 6px solid #ff5e62;
   border-radius: 12px;
@@ -297,8 +249,8 @@ section p {
 }
 
 .contact-form label {
-  font-weight: bold;
-  color: #2d2d2d; /* Testi neri */
+  font-weight: 600;
+  color: #ff5e62;
 }
 
 .contact-form input,
@@ -308,7 +260,8 @@ section p {
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
 }
 
 .contact-form input:focus,
@@ -319,7 +272,7 @@ section p {
 }
 
 .contact-form button {
-  background: linear-gradient(135deg, #ff758c, #ff9966);
+  background: #ff5e62;
   color: white;
   border: none;
   padding: 0.8rem 1.2rem;
