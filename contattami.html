@@ -23,22 +23,15 @@
   <link rel="stylesheet" href="assets/style.css" />
 
   <style>
-    /* Hamburger menu styles (same as index.html) */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      width: 30px;
-      height: 25px;
-      justify-content: space-between;
-      margin: 10px;
-    }
+    /* Hamburger menu bianche */
     .menu-toggle span {
-      background: #333;
+      background: white;
       height: 4px;
       border-radius: 2px;
       transition: all 0.3s ease;
     }
+
+    /* Menu aperto in verticale con stile tramonto */
     nav.sticky-nav ul {
       display: flex;
       list-style: none;
@@ -56,18 +49,32 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      nav.sticky-nav {
+        position: relative;
+      }
+
       .menu-toggle {
         display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        justify-content: space-between;
+        margin: 10px;
       }
+
       nav.sticky-nav ul {
         display: none;
         flex-direction: column;
-        background: #eee;
+        background: linear-gradient(135deg, #FF7E5F, #FEB47B);
         position: absolute;
         top: 50px;
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
+        right: 10px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 1000;
       }
       nav.sticky-nav ul.show {
         display: flex;
@@ -76,6 +83,65 @@
         margin: 10px 0;
         text-align: center;
       }
+      nav.sticky-nav ul li a {
+        color: white;
+        font-weight: 700;
+      }
+    }
+
+    /* Contattami testi neri */
+    .contact-info h2,
+    .contact-info p,
+    .contact-info a,
+    .contact-info ul li a {
+      color: black;
+    }
+
+    .contattami-container {
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+
+    .contattami-container form {
+      background: white;
+      border: 2px solid #FF7E5F; /* colore tramonto */
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contattami-container input[type="text"],
+    .contattami-container input[type="email"],
+    .contattami-container textarea {
+      border: 1.5px solid #FF7E5F;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .contattami-container input::placeholder,
+    .contattami-container textarea::placeholder {
+      color: #999;
+    }
+
+    /* Pulsante invio */
+    .contattami-container button[type="submit"] {
+      background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+      color: white;
+      font-weight: 700;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contattami-container button[type="submit"]:hover {
+      background: linear-gradient(135deg, #FEB47B, #FF7E5F);
     }
   </style>
 </head>
@@ -110,6 +176,15 @@
         <li><a href="https://www.instagram.com/sofia.buttaroni" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="https://www.linkedin.com/in/sofia-buttaroni-561974309" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
+    </section>
+
+    <section class="contattami-container">
+      <form action="#" method="post">
+        <input type="text" name="nome" placeholder="Inserisci il nome" required>
+        <input type="email" name="email" placeholder="Inserisci l'email" required>
+        <textarea name="messaggio" rows="5" placeholder="Scrivi qualcosa..." required></textarea>
+        <button type="submit">Invia</button>
+      </form>
     </section>
   </main>
 
