@@ -262,3 +262,35 @@ section p {
   background-color: white;
   border-color: #ff2e4e;
 }/*# sourceMappingURL=style.css.map */
+.footer {
+  background: linear-gradient(135deg, #ff9a8b, #fad0c4); /* Tramonto rosa-arancio */
+  color: #3d3d3d;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+  border-top: 2px solid #e6a4b4;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer a {
+  color: #3d3d3d;
+  text-decoration: none;
+  margin: 0 0.8rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #a73e47; /* Un tono elegante più scuro */
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+.privacy {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-top: 1rem;
+}
