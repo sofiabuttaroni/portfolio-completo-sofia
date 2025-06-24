@@ -1,24 +1,36 @@
-# Curriculum Sofia Buttaroni
+# Portfolio Completo di Sofia Buttaroni
+
+Questo progetto contiene il mio portfolio personale realizzato come esercitazione durante il corso UX/UI Design presso Start2Impact University.
 
 ## Descrizione
 
-Questo progetto contiene il mio curriculum vitae realizzato in HTML e CSS, con un design semplice, chiaro e responsive.  
-Include diverse sezioni: Chi Sono, Competenze, Formazione, Lingue, Hobby, e un footer con contatti e link ai social.
+Il sito presenta una breve biografia, le mie competenze professionali e artistiche, e una pagina di contatto. È stato sviluppato con HTML e CSS, con attenzione alla responsività, accessibilità e buona esperienza utente.
 
-## Struttura del progetto
+## Struttura delle directory
 
-- `cv.html`: pagina principale con il CV  
-- `assets/`: cartella contenente immagini (foto profilo, favicon), file CSS, e altri asset necessari al sito  
-- `contattami.html`: pagina di contatto
+- `assets/` – contiene tutte le risorse statiche come immagini, file CSS e favicon
+  - `style.css` – file principale degli stili
+  - immagini come `sofia.jpg` e le favicon (`favicon.ico`, `favicon-32x32.png`, etc.)
+- `index.html` – pagina principale del portfolio
+- `contattami.html` – pagina con informazioni di contatto
 
-## Tecnologie usate
+## Funzionalità
 
-- HTML5  
-- CSS3 (responsive design, menu sticky)  
-- Favicon in formato `.ico` e `.png` per migliorare l’esperienza utente e SEO  
+- Menu sticky e responsive con hamburger toggle per dispositivi mobili
+- Footer coerente e sempre visibile con link social e contatto
+- Favicon e Open Graph meta tag per una migliore condivisione sui social
+- Link esterni aperti in nuove schede (`target="_blank"`) con attributo `rel="noopener"` per la sicurezza
 
-## Come visualizzare il progetto
+---
 
-1. Scarica o clona la repository:  
-```bash
-git clone https://github.com/sofiabuttaroni/portfolio-completo-sofia.git
+## Come eseguire il progetto
+
+Basta aprire `index.html` o `contattami.html` in un browser moderno.
+
+---
+
+## Contatti
+
+- Email: buttaronis@gmail.com
+- GitHub: https://github.com/sofiabuttaroni
+- LinkedIn: https://www.linkedin.com/in/sofia-buttaroni-561974309
