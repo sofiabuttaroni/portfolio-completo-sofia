@@ -172,7 +172,9 @@ section p {
   padding: 0;
 }
 
-.sticky-nav a {
+.sticky-nav a,
+.sticky-nav a:visited,
+.sticky-nav a:active {
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -189,6 +191,7 @@ section p {
   background-color: white;
   border-color: #ff2e4e;
 }
+
 
 /* Footer - stile identico alla barra in header */
 .footer {
