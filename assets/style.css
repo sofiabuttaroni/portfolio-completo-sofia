@@ -294,3 +294,34 @@ section p {
   line-height: 1.4;
   margin-top: 1rem;
 }
+.footer {
+  background: linear-gradient(to right, #ff9a8b, #ff6a88, #ff99ac); /* Tramonto */
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  border-top: 4px solid #fff;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.footer a:hover {
+  opacity: 0.7;
+}
+
+.privacy {
+  font-size: 0.8rem;
+  color: #f3f3f3;
+}
