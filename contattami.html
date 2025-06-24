@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contattami - Sofia Buttaroni</title>
+  <!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="manifest" href="assets/site.webmanifest">
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <nav class="sticky-nav">
+    <ul>
+      <li><a href="cv.html#bio">Chi sono</a></li>
+      <li><a href="cv.html#competenze">Competenze</a></li>
+      <li><a href="contattami.html">Contattami</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Contattami</h1>
+    <p>Compila il modulo per inviarmi un messaggio!</p>
+  </header>
+
+  <section class="contact">
+    <form class="contact-form" action="#" method="POST">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="esempio@email.com" required />
+
+      <label for="messaggio">Messaggio</label>
+      <textarea id="messaggio" name="messaggio" rows="6" placeholder="Scrivimi qualcosa..." required></textarea>
+
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="cv.html">Torna al CV</a>
+      <a href="https://github.com/sofiabuttaroni" target="_blank">GitHub</a>
+      <a href="https://www.instagram.com/sofia.buttaroni" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/sofia-buttaroni-561974309" target="_blank">LinkedIn</a>
+    </div>
+    <p class="privacy">
+      © 2025 Sofia Buttaroni • Tutti i diritti riservati<br>
+      Autorizzo il trattamento dei miei dati personali ai sensi del GDPR (Reg. UE 2016/679)
+    </p>
+  </footer>
+
+</body>
+</html>
