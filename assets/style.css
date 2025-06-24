@@ -152,16 +152,12 @@ section p {
 .sticky-nav {
   position: sticky;
   top: 0;
-  background: linear-gradient(90deg, #ff9966, #ff5e62);
-  padding: 0.7rem 1rem;
   z-index: 1000;
-  text-align: center;
-  border-radius: 16px;
-  border: 2px solid white;
-  margin: 0.5rem auto;
-  width: fit-content;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(to right, #ff9a8b, #fad0c4); /* colori tramonto */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ombra leggera */
 }
+
 
 .sticky-nav ul {
   list-style: none;
