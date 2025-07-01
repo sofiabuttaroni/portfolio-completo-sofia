@@ -25,7 +25,6 @@
       justify-content: flex-start;
     }
 
-    /* Menu toggle hamburger */
     .menu-toggle span {
       background: white;
       height: 4px;
@@ -34,7 +33,6 @@
       display: block;
     }
 
-    /* Menu navigation bar */
     nav.sticky-nav {
       position: sticky;
       top: 0;
@@ -78,7 +76,6 @@
       outline: none;
     }
 
-    /* Desktop specific resets */
     @media (min-width: 769px) {
       nav.sticky-nav ul {
         position: static !important;
@@ -94,7 +91,6 @@
       }
     }
 
-    /* Mobile menu */
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
@@ -103,7 +99,7 @@
         width: 30px;
         height: 25px;
         justify-content: space-between;
-        margin-left: 20px;
+        margin: 0 auto; /* centrato orizzontalmente */
       }
 
       nav.sticky-nav ul {
@@ -112,7 +108,8 @@
         background: linear-gradient(135deg, #FF7E5F, #FEB47B);
         position: absolute;
         top: 50px;
-        right: 10px;
+        left: 50%; /* centrato orizzontalmente */
+        transform: translateX(-50%);
         width: 220px;
         padding: 15px;
         border-radius: 12px;
@@ -133,7 +130,6 @@
       }
     }
 
-    /* Intestazione Contattami a gradiente */
     main > h1 {
       max-width: 420px;
       margin: 2rem auto 1rem;
@@ -146,7 +142,6 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    /* Box bianco sopra il form per i link social */
     .social-links-box {
       max-width: 420px;
       background: white;
@@ -174,12 +169,11 @@
       outline: none;
     }
 
-    /* Form contatti bianco */
     .contattami-container {
       max-width: 420px;
       margin: 0 auto 4rem;
       background: white;
-      border: 2px solid #FF7E5F;
+      border: 2px solid white; /* bordo bianco */
       border-radius: 10px;
       padding: 25px 20px;
       color: black;
@@ -224,7 +218,6 @@
       background: linear-gradient(135deg, #FEB47B, #FF7E5F);
     }
 
-    /* Footer */
     footer.footer {
       background: linear-gradient(135deg, #FF7E5F, #FEB47B);
       padding: 18px 20px;

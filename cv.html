@@ -2,25 +2,21 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Curriculum – Sofia Buttaroni</title>
 
   <!-- Favicon & Apple Touch Icon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-
-  <!-- Favicon fallback (ico) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="manifest" href="site.webmanifest" />
 
   <link rel="stylesheet" href="assets/style.css" />
-  
+
   <style>
-    /* Sfondo radiante tramonto per tutta la pagina */
     body {
-      padding-top: 60px; /* per nav sticky */
+      padding-top: 60px;
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #FF7E5F, #FEB47B);
       color: black;
@@ -39,7 +35,7 @@
       display: block;
     }
 
-    /* Menu fixed sticky e centrato */
+    /* Menu fixed sticky e centrato con bordi smussati */
     nav.sticky-nav {
       position: fixed;
       top: 0;
@@ -55,8 +51,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      border-radius: 16px 16px 16px 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
     nav.sticky-nav ul {
@@ -69,7 +65,6 @@
       width: 100%;
     }
 
-    /* Desktop menu */
     @media (min-width: 769px) {
       nav.sticky-nav ul {
         position: static !important;
@@ -102,7 +97,6 @@
       }
     }
 
-    /* Mobile menu */
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
@@ -113,7 +107,6 @@
         justify-content: space-between;
         margin-left: auto;
       }
-
       nav.sticky-nav ul {
         display: none;
         flex-direction: column;
@@ -124,7 +117,7 @@
         width: 200px;
         padding: 10px;
         border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         z-index: 1000;
       }
       nav.sticky-nav ul.show {
@@ -141,12 +134,11 @@
       }
     }
 
-    /* Intestazioni */
     header {
       text-align: center;
       margin: 1.5rem auto;
       color: white;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
     header h1 {
       font-size: 3rem;
@@ -157,14 +149,13 @@
       font-weight: 600;
     }
 
-    /* Sezioni principali CV */
     section {
       background: rgba(255, 255, 255, 0.9);
       margin: 1rem auto;
       padding: 20px;
       border-radius: 12px;
       max-width: 700px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       color: #333;
     }
     section h2 {
@@ -182,14 +173,28 @@
       line-height: 1.4;
     }
 
-    /* Contatti semplici */
+    /* Foto profilo cerchio con bordo radiante */
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid;
+      border-image-slice: 1;
+      border-width: 4px;
+      border-image-source: linear-gradient(135deg, #FF7E5F, #FEB47B);
+      display: block;
+      margin: 0 auto 15px auto;
+      box-shadow: 0 0 8px rgba(255, 126, 95, 0.7);
+    }
+
     .contatti {
       max-width: 700px;
       margin: 1rem auto 3rem;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255, 255, 255, 0.9);
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       color: #333;
       font-size: 1.1rem;
     }
@@ -197,7 +202,6 @@
       color: #FF7E5F;
     }
 
-    /* Footer */
     footer.footer {
       background: linear-gradient(135deg, #FF7E5F, #FEB47B);
       padding: 15px 20px;
@@ -223,9 +227,15 @@
 </head>
 
 <body>
-
   <nav class="sticky-nav" role="navigation" aria-label="Menu principale">
-    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+    <div
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      role="button"
+      tabindex="0"
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -244,10 +254,22 @@
 
   <section id="bio" class="bio">
     <h2>Chi Sono</h2>
+    <img
+      src="assets/sofia.jpg"
+      alt="Foto di Sofia Buttaroni"
+      class="profile-pic"
+    />
     <p>
-      Sono una giovane creativa con diploma al Liceo Artistico di Velletri e un anno di frequentazione dell'Accademia di Belle Arti di Roma – corso di Design.<br>
-      Mi contraddistingue una <strong>visione artistica</strong> applicata al mondo digitale, dalla progettazione grafica alla creazione di contenuti social. Coltivo molte passioni: disegno, illustrazione, cucito e modellismo.<br>
-      Grazie alla <strong>pallavolo</strong> ho sviluppato spirito di squadra e determinazione; ho inoltre maturato esperienza lavorando come animatrice in un centro estivo.
+      Sono una giovane creativa con diploma al Liceo Artistico di Velletri e un anno
+      di frequentazione dell'Accademia di Belle Arti di Roma – corso di Design.
+      <br />
+      Mi contraddistingue una <strong>visione artistica</strong> applicata al mondo
+      digitale, dalla progettazione grafica alla creazione di contenuti social.
+      Coltivo molte passioni: disegno, illustrazione, cucito e modellismo.
+      <br />
+      Grazie alla <strong>pallavolo</strong> ho sviluppato spirito di squadra e
+      determinazione; ho inoltre maturato esperienza lavorando come animatrice in
+      un centro estivo.
     </p>
   </section>
 
@@ -262,12 +284,6 @@
       <li>Conoscenza di Rhino 3D, Fusion 360 (Inventor)</li>
       <li>Uso di programmi Adobe (Photoshop, Illustrator, InDesign)</li>
     </ul>
-  </section>
-
-  <section class="contatti" aria-label="Dati di contatto">
-    <h2>Contatti</h2>
-    <p><strong>Email:</strong> buttaronis@gmail.com</p>
-    <p><strong>Telefono:</strong> +39 348 3797054</p>
   </section>
 
   <section id="lingue">
@@ -288,7 +304,13 @@
       <li>Animazione per centri estivi</li>
     </ul>
   </section>
-
+  
+<section class="contatti" aria-label="Dati di contatto">
+    <h2>Contatti</h2>
+    <p><strong>Email:</strong> buttaronis@gmail.com</p>
+    <p><strong>Telefono:</strong> +39 348 3797054</p>
+  </section>
+  
   <footer class="footer">
     <div class="footer-links" aria-label="Link social e contatti">
       <a href="contattami.html">Contattami</a>
@@ -312,12 +334,11 @@
 
     // Accessibilità con tastiera
     menuToggle.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         menuToggle.click();
       }
     });
   </script>
-
 </body>
 </html>
