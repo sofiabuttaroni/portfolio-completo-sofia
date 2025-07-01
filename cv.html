@@ -144,12 +144,12 @@
 <body>
 
   <nav class="sticky-nav">
-    <div class="menu-toggle">
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <ul>
+    <ul id="menu">
       <li><a href="#bio">Chi sono</a></li>
       <li><a href="#competenze">Competenze</a></li>
       <li><a href="contattami.html">Contattami</a></li>
@@ -221,23 +221,22 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.querySelector(".menu-toggle");
-      const menu = document.querySelector("nav.sticky-nav ul");
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
 
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("show");
-      });
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      menu.classList.toggle('show');
+    });
+
+    menuToggle.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
+      }
     });
   </script>
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navUl = document.querySelector('.sticky-nav ul');
-
-  menuToggle.addEventListener('click', () => {
-    navUl.classList.toggle('show');
-  });
-</script>
 
 </body>
 </html>
