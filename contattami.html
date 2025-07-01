@@ -69,6 +69,13 @@
       border-color: #FEB47B;
     }
 
+    /* Scritta email su mobile diventa nera (fix richiesto) */
+    @media (max-width: 768px) {
+      .contact-links p a[href^="mailto:"] {
+        color: black !important;
+      }
+    }
+
     /* Form contattami - rettangolo bianco con bordo tramonto */
     .contattami-container {
       max-width: 400px;
