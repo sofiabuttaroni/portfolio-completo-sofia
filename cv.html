@@ -269,6 +269,25 @@
       <li>Uso di programmi Adobe (Photoshop, Illustrator, InDesign)</li>
     </ul>
   </section>
+    <section id="lingue" class="lingue">
+    <h2>Competenze linguistiche</h2>
+    <ul>
+      <li>Italiano – Madrelingua</li>
+      <li>Inglese – Buona conoscenza (B2)</li>
+      <li>Spagnolo – Conoscenza base</li>
+    </ul>
+  </section>
+
+  <section id="hobby" class="hobby">
+    <h2>Hobby e Interessi</h2>
+    <ul>
+      <li>Disegno e illustrazione</li>
+      <li>Cucito e modellismo</li>
+      <li>Pallavolo (spirito di squadra e determinazione)</li>
+      <li>Animazione e lavoro con bambini</li>
+    </ul>
+  </section>
+
 
   <section class="contattami-container" id="contattami">
     <h2>Contattami</h2>
@@ -283,3 +302,30 @@
   <footer class="footer">
     <div class="footer-links" aria-label="Link social">
       <a href="https://github.com/sofiabuttaroni" target="_blank" rel="noopener noreferrer" aria-label="GitHub di Sofia">GitHub</a>
+      <a href="https://www.linkedin.com/in/sofiabuttaroni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn di Sofia">LinkedIn</a>
+    </div>
+    <p>© 2025 Sofia Buttaroni</p>
+  </footer>
+
+  <script>
+    // Toggle menu mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      menu.classList.toggle('show');
+    });
+
+    // Accessibilità con tastiera
+    menuToggle.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
+      }
+    });
+  </script>
+
+</body>
+</html>
