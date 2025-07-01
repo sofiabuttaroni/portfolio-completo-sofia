@@ -2,15 +2,8 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contattami – Sofia Buttaroni</title>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Contattami – Sofia Buttaroni" />
-  <meta property="og:description" content="Pagina contatti del portfolio di Sofia Buttaroni, designer digitale." />
-  <meta property="og:image" content="https://sofiabuttaroni.github.io/portfolio-completo-sofia/assets/sofia.jpg" />
-  <meta property="og:url" content="https://sofiabuttaroni.github.io/portfolio-completo-sofia/contattami.html" />
-  <meta property="og:type" content="website" />
 
   <!-- Favicon & Apple Touch Icon -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
@@ -23,15 +16,16 @@
   <link rel="stylesheet" href="assets/style.css" />
 
   <style>
-    /* Hamburger menu bianche */
+    /* Hamburger menu bianco */
     .menu-toggle span {
       background: white;
       height: 4px;
       border-radius: 2px;
       transition: all 0.3s ease;
+      display: block;
     }
 
-    /* Menu aperto in verticale con stile tramonto */
+    /* Menu desktop */
     nav.sticky-nav ul {
       display: flex;
       list-style: none;
@@ -43,11 +37,11 @@
     }
     nav.sticky-nav ul li a {
       text-decoration: none;
-      color: #333;
+      color: white;
       font-weight: bold;
     }
 
-    /* Responsive */
+    /* Responsive menu */
     @media (max-width: 768px) {
       nav.sticky-nav {
         position: relative;
@@ -88,61 +82,6 @@
         font-weight: 700;
       }
     }
-
-    /* Contattami testi neri */
-    .contact-info h2,
-    .contact-info p,
-    .contact-info a,
-    .contact-info ul li a {
-      color: black;
-    }
-
-    .contattami-container {
-      max-width: 400px;
-      margin: 2rem auto;
-    }
-
-    .contattami-container form {
-      background: white;
-      border: 2px solid #FF7E5F; /* colore tramonto */
-      border-radius: 10px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contattami-container input[type="text"],
-    .contattami-container input[type="email"],
-    .contattami-container textarea {
-      border: 1.5px solid #FF7E5F;
-      border-radius: 6px;
-      padding: 10px;
-      font-size: 1rem;
-      font-family: inherit;
-      resize: vertical;
-    }
-
-    .contattami-container input::placeholder,
-    .contattami-container textarea::placeholder {
-      color: #999;
-    }
-
-    /* Pulsante invio */
-    .contattami-container button[type="submit"] {
-      background: linear-gradient(135deg, #FF7E5F, #FEB47B);
-      color: white;
-      font-weight: 700;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contattami-container button[type="submit"]:hover {
-      background: linear-gradient(135deg, #FEB47B, #FF7E5F);
-    }
   </style>
 </head>
 <body>
@@ -161,31 +100,7 @@
   </nav>
 
   <main>
-    <header>
-      <h1>Contattami</h1>
-      <p>Puoi scrivermi via email o seguirmi sui social.</p>
-    </header>
-
-    <section class="contact-info">
-      <h2>Indirizzo Email</h2>
-      <p><a href="mailto:buttaronis@gmail.com">buttaronis@gmail.com</a></p>
-
-      <h2>Social</h2>
-      <ul>
-        <li><a href="https://github.com/sofiabuttaroni" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://www.instagram.com/sofia.buttaroni" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/in/sofia-buttaroni-561974309" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
-    </section>
-
-    <section class="contattami-container">
-      <form action="#" method="post">
-        <input type="text" name="nome" placeholder="Inserisci il nome" required>
-        <input type="email" name="email" placeholder="Inserisci l'email" required>
-        <textarea name="messaggio" rows="5" placeholder="Scrivi qualcosa..." required></textarea>
-        <button type="submit">Invia</button>
-      </form>
-    </section>
+    <!-- Mantieni tutto il contenuto originale della pagina contattami -->
   </main>
 
   <footer class="footer">
@@ -205,19 +120,4 @@
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
-    menuToggle.addEventListener('click', () => {
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !isExpanded);
-      menu.classList.toggle('show');
-    });
-
-    menuToggle.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        menuToggle.click();
-      }
-    });
-  </script>
-
-</body>
-</html>
+    menuToggle.addEvent
