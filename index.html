@@ -26,19 +26,28 @@
       margin: 0;
     }
 
-    /* Hamburger menu bianco */
+    /* Hamburger menu bianco e piccolo */
+    .menu-toggle {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 18px;
+      margin: 0 auto; /* centro orizzontalmente */
+    }
     .menu-toggle span {
       background: white;
-      height: 4px;
+      height: 3px;
       border-radius: 2px;
       transition: all 0.3s ease;
       display: block;
     }
 
-    /* Menu fixed sticky e centrato con bordi smussati */
+    /* Menu fixed sticky e centrato con bordi smussati più ampi */
     nav.sticky-nav {
       position: fixed;
-      top: 0;
+      top: 10px;
       left: 50%;
       transform: translateX(-50%);
       width: 600px;
@@ -51,7 +60,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 16px 16px 16px 16px;
+      border-radius: 24px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
@@ -97,26 +106,26 @@
       }
     }
 
+    /* Menu mobile */
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        width: 30px;
-        height: 25px;
-        justify-content: space-between;
-        margin-left: auto;
+      nav.sticky-nav {
+        width: 90vw;
+        height: auto;
+        padding: 10px 15px;
+        border-radius: 20px;
+        top: 10px;
       }
       nav.sticky-nav ul {
         display: none;
         flex-direction: column;
         background: linear-gradient(135deg, #FF7E5F, #FEB47B);
         position: absolute;
-        top: 50px;
-        right: 10px;
-        width: 200px;
+        top: 45px; /* sotto hamburger */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 160px;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 16px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         z-index: 1000;
       }
@@ -124,13 +133,15 @@
         display: flex;
       }
       nav.sticky-nav ul li {
-        margin: 10px 0;
+        margin: 8px 0;
         text-align: center;
       }
       nav.sticky-nav ul li a {
         color: white;
         font-weight: 700;
         font-size: 1.1rem;
+        display: block;
+        padding: 6px 0;
       }
     }
 
@@ -305,7 +316,7 @@
     </ul>
   </section>
   
-<section class="contatti" aria-label="Dati di contatto">
+  <section class="contatti" aria-label="Dati di contatto">
     <h2>Contatti</h2>
     <p><strong>Email:</strong> buttaronis@gmail.com</p>
     <p><strong>Telefono:</strong> +39 348 3797054</p>
@@ -318,21 +329,22 @@
       <a href="https://www.linkedin.com/in/sofiabuttaroni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn di Sofia">LinkedIn</a>
       <a href="https://www.instagram.com/sofia.buttaroni?igsh=MXJ4cmwwc2xibWpkeA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram di Sofia">Instagram</a>
     </div>
-    <p>© 2025 Sofia Buttaroni</p>
+    <div>
+      &copy; 2025 Sofia Buttaroni. Tutti i diritti riservati.
+    </div>
   </footer>
 
   <script>
-    // Toggle menu mobile
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', () => {
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
       menu.classList.toggle('show');
     });
 
-    // Accessibilità con tastiera
+    // Per accessibilità: toggle menu con invio/spazio
     menuToggle.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
