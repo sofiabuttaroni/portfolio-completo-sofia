@@ -116,6 +116,7 @@ section p {
     padding: 3rem 2rem;
   }
 }
+
 .bio-container {
   display: flex;
   align-items: flex-start;
@@ -127,8 +128,7 @@ section p {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 4px solid #ff5e62;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -189,8 +189,9 @@ section p {
   background: #ff9966;
 }
 
+/* Sticky nav */
 .sticky-nav {
-  position: sticky;
+  position: relative; /* cambiato sticky a relative per evitare errori */
   top: 0;
   background: linear-gradient(90deg, #ff9966, #ff5e62);
   padding: 0.7rem 1rem;
@@ -217,7 +218,7 @@ section p {
 }
 
 .sticky-nav a {
-  color: white;
+  color: white !important;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
@@ -233,6 +234,7 @@ section p {
   border-color: #ff2e4e;
 }
 
+/* Hamburger menu bianche */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -257,14 +259,15 @@ section p {
   .sticky-nav ul {
     display: none;
     flex-direction: column;
-    background: linear-gradient(135deg, #ff758c, #ff9966);
+    background: linear-gradient(135deg, #FF7E5F, #FEB47B);
     position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    border-radius: 0 0 16px 16px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    top: 50px;
+    right: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
   }
   .sticky-nav ul.show {
     display: flex;
@@ -277,7 +280,7 @@ section p {
     border: 2px solid white;
     border-radius: 25px;
     color: white;
-    font-weight: bold;
+    font-weight: 700;
     padding: 0.6rem 1rem;
     display: inline-block;
   }
@@ -288,6 +291,7 @@ section p {
   }
 }
 
+/* Footer */
 .footer {
   background: linear-gradient(135deg, #ff758c, #ff9966);
   color: white;
@@ -323,4 +327,57 @@ section p {
   border-color: #ff2e4e;
 }
 
-/*# sourceMappingURL=style.css.map */
+/* Contattami testi neri */
+.contact-info h2,
+.contact-info p,
+.contact-info a,
+.contact-info ul li a {
+  color: black;
+}
+
+.contattami-container {
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.contattami-container form {
+  background: white;
+  border: 2px solid #FF7E5F; /* colore tramonto */
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contattami-container input[type="text"],
+.contattami-container input[type="email"],
+.contattami-container textarea {
+  border: 1.5px solid #FF7E5F;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.contattami-container input::placeholder,
+.contattami-container textarea::placeholder {
+  color: #999;
+}
+
+/* Pulsante invio */
+.contattami-container button[type="submit"] {
+  background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+  color: white;
+  font-weight: 700;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contattami-container button[type="submit"]:hover {
+  background: linear-gradient(135deg, #FEB47B, #FF7E5F);
+}
