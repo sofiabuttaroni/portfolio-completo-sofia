@@ -18,15 +18,16 @@
   <link rel="stylesheet" href="assets/style.css" />
   
   <style>
-    /* BODY padding per menu fisso */
+    /* Sfondo radiante tramonto per tutta la pagina */
     body {
-      padding-top: 60px; /* altezza nav per non sovrapporre contenuti */
+      padding-top: 60px; /* per nav sticky */
       font-family: Arial, sans-serif;
-      background: white;
+      background: linear-gradient(135deg, #FF7E5F, #FEB47B);
       color: black;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      margin: 0;
     }
 
     /* Hamburger menu bianco */
@@ -38,15 +39,15 @@
       display: block;
     }
 
-    /* Menu fixed sia desktop che mobile, barra compatta e centrata */
+    /* Menu fixed sticky e centrato */
     nav.sticky-nav {
       position: fixed;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 600px; /* barra centrata e non full width */
+      width: 600px;
       max-width: 95vw;
-      height: 50px; /* altezza più piccola */
+      height: 50px;
       z-index: 10000;
       background: linear-gradient(135deg, #FF7E5F, #FEB47B);
       padding: 5px 20px;
@@ -54,11 +55,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0 0 12px 12px; /* angoli arrotondati sotto */
+      border-radius: 0 0 12px 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
-    /* Menu di navigazione desktop */
     nav.sticky-nav ul {
       display: flex;
       list-style: none;
@@ -69,7 +69,7 @@
       width: 100%;
     }
 
-    /* Desktop specifico: orizzontale, senza sfondo extra */
+    /* Desktop menu */
     @media (min-width: 769px) {
       nav.sticky-nav ul {
         position: static !important;
@@ -102,7 +102,7 @@
       }
     }
 
-    /* Responsive menu per mobile */
+    /* Mobile menu */
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
@@ -141,59 +141,60 @@
       }
     }
 
-    /* Contattami testi neri */
-    .contact-info h2,
-    .contact-info p,
-    .contact-info a,
-    .contact-info ul li a {
-      color: black;
-    }
-
-    .contattami-container {
-      max-width: 400px;
-      margin: 2rem auto;
-    }
-
-    .contattami-container form {
-      background: white;
-      border: 2px solid #FF7E5F; /* colore tramonto */
-      border-radius: 10px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contattami-container input[type="text"],
-    .contattami-container input[type="email"],
-    .contattami-container textarea {
-      border: 1.5px solid #FF7E5F;
-      border-radius: 6px;
-      padding: 10px;
-      font-size: 1rem;
-      font-family: inherit;
-      resize: vertical;
-    }
-
-    .contattami-container input::placeholder,
-    .contattami-container textarea::placeholder {
-      color: #999;
-    }
-
-    /* Pulsante invio */
-    .contattami-container button[type="submit"] {
-      background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+    /* Intestazioni */
+    header {
+      text-align: center;
+      margin: 1.5rem auto;
       color: white;
-      font-weight: 700;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: 600;
     }
 
-    .contattami-container button[type="submit"]:hover {
-      background: linear-gradient(135deg, #FEB47B, #FF7E5F);
+    /* Sezioni principali CV */
+    section {
+      background: rgba(255, 255, 255, 0.9);
+      margin: 1rem auto;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 700px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      color: #333;
+    }
+    section h2 {
+      margin-top: 0;
+      color: #FF7E5F;
+      border-bottom: 2px solid #FEB47B;
+      padding-bottom: 4px;
+      font-weight: 700;
+    }
+    section ul {
+      padding-left: 1.2rem;
+    }
+    section ul li {
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    /* Contatti semplici */
+    .contatti {
+      max-width: 700px;
+      margin: 1rem auto 3rem;
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      color: #333;
+      font-size: 1.1rem;
+    }
+    .contatti strong {
+      color: #FF7E5F;
     }
 
     /* Footer */
@@ -205,11 +206,9 @@
       margin-top: auto;
       font-size: 0.9rem;
     }
-
     footer.footer .footer-links {
       margin-bottom: 8px;
     }
-
     footer.footer .footer-links a {
       color: white;
       margin: 0 10px;
@@ -217,11 +216,9 @@
       text-decoration: none;
       font-size: 1rem;
     }
-
     footer.footer .footer-links a:hover {
       text-decoration: underline;
     }
-
   </style>
 </head>
 
@@ -247,14 +244,11 @@
 
   <section id="bio" class="bio">
     <h2>Chi Sono</h2>
-    <div class="bio-container">
-      <img src="assets/sofia.jpg" alt="Sofia Buttaroni" class="profile-img">
-      <p>
-        Sono una giovane creativa con diploma al Liceo Artistico di Velletri e un anno di frequentazione dell'Accademia di Belle Arti di Roma – corso di Design.<br>
-        Mi contraddistingue una <strong>visione artistica</strong> applicata al mondo digitale, dalla progettazione grafica alla creazione di contenuti social. Coltivo molte passioni: disegno, illustrazione, cucito e modellismo.<br>
-        Grazie alla <strong>pallavolo</strong> ho sviluppato spirito di squadra e determinazione; ho inoltre maturato esperienza lavorando come animatrice in un centro estivo.
-      </p>
-    </div>
+    <p>
+      Sono una giovane creativa con diploma al Liceo Artistico di Velletri e un anno di frequentazione dell'Accademia di Belle Arti di Roma – corso di Design.<br>
+      Mi contraddistingue una <strong>visione artistica</strong> applicata al mondo digitale, dalla progettazione grafica alla creazione di contenuti social. Coltivo molte passioni: disegno, illustrazione, cucito e modellismo.<br>
+      Grazie alla <strong>pallavolo</strong> ho sviluppato spirito di squadra e determinazione; ho inoltre maturato esperienza lavorando come animatrice in un centro estivo.
+    </p>
   </section>
 
   <section id="competenze" class="competenze">
@@ -269,40 +263,38 @@
       <li>Uso di programmi Adobe (Photoshop, Illustrator, InDesign)</li>
     </ul>
   </section>
-    <section id="lingue" class="lingue">
-    <h2>Competenze linguistiche</h2>
+
+  <section class="contatti" aria-label="Dati di contatto">
+    <h2>Contatti</h2>
+    <p><strong>Email:</strong> buttaronis@gmail.com</p>
+    <p><strong>Telefono:</strong> +39 348 3797054</p>
+  </section>
+
+  <section id="lingue">
+    <h2>Lingue</h2>
     <ul>
       <li>Italiano – Madrelingua</li>
-      <li>Inglese – Buona conoscenza (B2)</li>
-      <li>Spagnolo – Conoscenza base</li>
+      <li>Inglese – Livello B2 (intermedio superiore)</li>
+      <li>Spagnolo – Livello base</li>
     </ul>
   </section>
 
-  <section id="hobby" class="hobby">
-    <h2>Hobby e Interessi</h2>
+  <section id="hobby">
+    <h2>Hobby</h2>
     <ul>
       <li>Disegno e illustrazione</li>
       <li>Cucito e modellismo</li>
-      <li>Pallavolo (spirito di squadra e determinazione)</li>
-      <li>Animazione e lavoro con bambini</li>
+      <li>Pallavolo</li>
+      <li>Animazione per centri estivi</li>
     </ul>
   </section>
 
-
-  <section class="contattami-container" id="contattami">
-    <h2>Contattami</h2>
-    <form action="#" method="post" aria-label="Modulo contatti">
-      <input type="text" name="nome" placeholder="Nome" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="messaggio" placeholder="Messaggio" rows="4" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
-  </section>
-
   <footer class="footer">
-    <div class="footer-links" aria-label="Link social">
+    <div class="footer-links" aria-label="Link social e contatti">
+      <a href="contattami.html">Contattami</a>
       <a href="https://github.com/sofiabuttaroni" target="_blank" rel="noopener noreferrer" aria-label="GitHub di Sofia">GitHub</a>
       <a href="https://www.linkedin.com/in/sofiabuttaroni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn di Sofia">LinkedIn</a>
+      <a href="https://www.instagram.com/sofia.buttaroni?igsh=MXJ4cmwwc2xibWpkeA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram di Sofia">Instagram</a>
     </div>
     <p>© 2025 Sofia Buttaroni</p>
   </footer>
