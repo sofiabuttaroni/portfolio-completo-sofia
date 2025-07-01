@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="assets/style.css" />
   
   <style>
+    /* BODY padding per menu fisso */
+    body {
+      padding-top: 60px; /* altezza nav per non sovrapporre contenuti */
+    }
+
     /* Hamburger menu bianco */
     .menu-toggle span {
       background: white;
@@ -27,16 +32,17 @@
       display: block;
     }
 
-    /* Menu sticky sia desktop che mobile */
+    /* Menu fixed sia desktop che mobile */
     nav.sticky-nav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
       z-index: 10000;
       background: linear-gradient(135deg, #FF7E5F, #FEB47B);
       padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      box-sizing: border-box;
     }
 
     /* Menu di navigazione desktop */
@@ -66,9 +72,6 @@
         color: white;
         font-weight: bold;
       }
-      .menu-toggle {
-        display: none;
-      }
     }
 
     /* Responsive menu per mobile */
@@ -80,7 +83,7 @@
         width: 30px;
         height: 25px;
         justify-content: space-between;
-        margin: 0;
+        margin: 10px;
       }
 
       nav.sticky-nav ul {
@@ -88,10 +91,10 @@
         flex-direction: column;
         background: linear-gradient(135deg, #FF7E5F, #FEB47B);
         position: absolute;
-        top: 60px;
-        right: 20px;
+        top: 50px;
+        right: 10px;
         width: 200px;
-        padding: 15px;
+        padding: 10px;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         z-index: 1000;
@@ -106,7 +109,6 @@
       nav.sticky-nav ul li a {
         color: white;
         font-weight: 700;
-        text-decoration: none;
       }
     }
 
@@ -175,10 +177,10 @@
       <span></span>
       <span></span>
     </div>
-    <ul id="menu" role="menu">
-      <li role="none"><a role="menuitem" href="#bio">Chi sono</a></li>
-      <li role="none"><a role="menuitem" href="#competenze">Competenze</a></li>
-      <li role="none"><a role="menuitem" href="contattami.html">Contattami</a></li>
+    <ul id="menu">
+      <li><a href="#bio">Chi sono</a></li>
+      <li><a href="#competenze">Competenze</a></li>
+      <li><a href="contattami.html">Contattami</a></li>
     </ul>
   </nav>
 
