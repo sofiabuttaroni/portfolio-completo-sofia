@@ -17,14 +17,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-
   <link rel="manifest" href="site.webmanifest" />
 
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="assets/menu.css" />
 
   <style>
-    /* Hamburger menu - linee bianche */
     .menu-toggle span {
       background: white;
       height: 4px;
@@ -32,7 +30,6 @@
       transition: all 0.3s ease;
     }
 
-    /* Box con link email e social sotto menu */
     .contact-links {
       max-width: 400px;
       margin: 1rem auto;
@@ -69,14 +66,12 @@
       border-color: #FEB47B;
     }
 
-    /* Scritta email su mobile diventa nera (fix richiesto) */
     @media (max-width: 768px) {
       .contact-links p a[href^="mailto:"] {
         color: black !important;
       }
     }
 
-    /* Form contattami - rettangolo bianco con bordo tramonto */
     .contattami-container {
       max-width: 400px;
       margin: 2rem auto 4rem auto;
@@ -91,8 +86,6 @@
       flex-direction: column;
       gap: 20px;
     }
-
-    /* Ogni input/textarea ha bordo arancio e bordi arrotondati */
     .contattami-container input[type="text"],
     .contattami-container input[type="email"],
     .contattami-container textarea {
@@ -111,13 +104,11 @@
       border-color: #FEB47B;
       box-shadow: 0 0 8px #FEB47B;
     }
-    /* Placeholder testo grigio */
     .contattami-container input::placeholder,
     .contattami-container textarea::placeholder {
       color: #999;
     }
 
-    /* Pulsante invia con gradient tramonto */
     .contattami-container button[type="submit"] {
       background: linear-gradient(135deg, #FF7E5F, #FEB47B);
       color: white;
@@ -133,7 +124,6 @@
       background: linear-gradient(135deg, #FEB47B, #FF7E5F);
     }
 
-    /* Responsive: menu verticale hamburger */
     @media (max-width: 768px) {
       nav.sticky-nav {
         position: relative;
@@ -232,22 +222,21 @@
 
   <script src="assets/menu.js"></script>
   <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
 
-  menuToggle.addEventListener('click', () => {
-    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', !isExpanded);
-    menu.classList.toggle('show');
-  });
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      menu.classList.toggle('show');
+    });
 
-  menuToggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      menuToggle.click();
-    }
-  });
-</script>
-
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
+      }
+    });
+  </script>
 </body>
 </html>
