@@ -191,11 +191,11 @@ section p {
 
 /* Sticky nav */
 .sticky-nav {
-  position: relative; /* cambiato sticky a relative per evitare errori */
+  position: sticky;
   top: 0;
   background: linear-gradient(90deg, #ff9966, #ff5e62);
   padding: 0.7rem 1rem;
-  z-index: 1000;
+  z-index: 10000;
   text-align: center;
   border-radius: 16px;
   border: 2px solid white;
@@ -267,7 +267,7 @@ section p {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
+    z-index: 10001;
   }
   .sticky-nav ul.show {
     display: flex;

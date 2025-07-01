@@ -27,6 +27,15 @@
       display: block;
     }
 
+    /* Menu sticky sia desktop che mobile */
+    nav.sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+      padding: 10px 20px;
+    }
+
     /* Menu di navigazione desktop */
     nav.sticky-nav ul {
       display: flex;
@@ -34,21 +43,30 @@
       padding: 0;
       margin: 0;
     }
-    nav.sticky-nav ul li {
-      margin-right: 20px;
-    }
-    nav.sticky-nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
 
-    /* Responsive menu */
-    @media (max-width: 768px) {
-      nav.sticky-nav {
-        position: relative;
+    /* Desktop specifico: orizzontale, senza sfondo extra */
+    @media (min-width: 769px) {
+      nav.sticky-nav ul {
+        position: static !important;
+        flex-direction: row !important;
+        background: none !important;
+        box-shadow: none !important;
+        width: auto !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
       }
+      nav.sticky-nav ul li {
+        margin-right: 20px;
+      }
+      nav.sticky-nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+    }
 
+    /* Responsive menu per mobile */
+    @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
         flex-direction: column;
