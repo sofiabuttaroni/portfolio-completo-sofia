@@ -16,11 +16,139 @@
   <link rel="manifest" href="site.webmanifest">
 
   <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* Hamburger menu bianche */
+    .menu-toggle span {
+      background: white;
+      height: 4px;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    /* Menu di navigazione */
+    nav.sticky-nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav.sticky-nav ul li {
+      margin-right: 20px;
+    }
+    nav.sticky-nav ul li a {
+      text-decoration: none;
+      color: white; /* Cambiato qui: testo bianco */
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav.sticky-nav {
+        position: relative;
+      }
+
+      .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        justify-content: space-between;
+        margin: 10px;
+      }
+
+      nav.sticky-nav ul {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+      }
+      nav.sticky-nav ul.show {
+        display: flex;
+      }
+      nav.sticky-nav ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
+      nav.sticky-nav ul li a {
+        color: white;
+        font-weight: 700;
+      }
+    }
+
+    /* Contattami testi neri */
+    .contact-info h2,
+    .contact-info p,
+    .contact-info a,
+    .contact-info ul li a {
+      color: black;
+    }
+
+    .contattami-container {
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+
+    .contattami-container form {
+      background: white;
+      border: 2px solid #FF7E5F; /* colore tramonto */
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contattami-container input[type="text"],
+    .contattami-container input[type="email"],
+    .contattami-container textarea {
+      border: 1.5px solid #FF7E5F;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .contattami-container input::placeholder,
+    .contattami-container textarea::placeholder {
+      color: #999;
+    }
+
+    /* Pulsante invio */
+    .contattami-container button[type="submit"] {
+      background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+      color: white;
+      font-weight: 700;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contattami-container button[type="submit"]:hover {
+      background: linear-gradient(135deg, #FEB47B, #FF7E5F);
+    }
+  </style>
 </head>
 
 <body>
 
   <nav class="sticky-nav">
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <ul>
       <li><a href="#bio">Chi sono</a></li>
       <li><a href="#competenze">Competenze</a></li>
@@ -92,5 +220,15 @@
     </p>
   </footer>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector(".menu-toggle");
+      const menu = document.querySelector("nav.sticky-nav ul");
+
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("show");
+      });
+    });
+  </script>
 </body>
 </html>
