@@ -45,58 +45,49 @@
     }
 
     /* Menu fixed sticky e centrato con bordi smussati più ampi e padding migliore */
-    nav.sticky-nav {
-      position: fixed;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      max-width: 95vw;
-      height: 50px;
-      z-index: 10000;
-      background: linear-gradient(135deg, #FF7E5F, #FEB47B);
-      padding: 5px 30px; /* più padding orizzontale */
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 24px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    }
+   nav.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
 
-    nav.sticky-nav ul {
-      display: flex;
-      list-style: none;
-      padding: 0 10px; /* aggiungo padding orizzontale */
-      margin: 0;
-      gap: 40px; /* aumento spazio tra link */
-      justify-content: center;
-      width: 100%;
-    }
+nav.sticky-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    nav.sticky-nav ul li {
-      /* aumento padding interno per far respirare i link */
-      padding: 6px 15px;
-      border-radius: 16px;
-      transition: background 0.3s ease;
-    }
+nav.sticky-nav ul li {
+  margin-right: 25px;
+}
 
-    nav.sticky-nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 1.1rem;
-      display: block;
-      padding: 6px 12px;
-      border-radius: 12px;
-      transition: background 0.3s ease;
-    }
+nav.sticky-nav ul li:last-child {
+  margin-right: 0;
+}
 
-    nav.sticky-nav ul li:hover,
-    nav.sticky-nav ul li:focus-within {
-      background: rgba(255, 126, 95, 0.8);
-      outline: none;
-    }
+nav.sticky-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.15rem;
+  transition: background 0.3s ease, color 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+nav.sticky-nav ul li a:hover,
+nav.sticky-nav ul li a:focus {
+  background: rgba(255, 126, 95, 0.8);
+  outline: none;
+}
+
 
     @media (min-width: 769px) {
       nav.sticky-nav ul {
@@ -268,11 +259,11 @@
       <span></span>
     </div>
     <ul id="menu">
-      <li><a href="#bio">Chi sono</a></li>
-      <li><a href="#competenze">Competenze</a></li>
-      <li><a href="contattami.html">Contattami</a></li>
-    </ul>
-  </nav>
+    <li><a href="index.html#bio">Chi sono</a></li>
+    <li><a href="cv.html">Curriculum</a></li>
+    <li><a href="contattami.html" aria-current="page">Contattami</a></li>
+  </ul>
+</nav>
 
   <header>
     <h1>Sofia Buttaroni</h1>
