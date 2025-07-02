@@ -70,57 +70,58 @@
 
     /* --- VERSIONE MOBILE --- */
     @media (max-width: 768px) {
-  /* Hamburger fisso esattamente al centro verticale e orizzontale */
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    width: 35px;
-    height: 30px;
-    justify-content: space-between;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 11000;
-  }
-  .menu-toggle span {
-    background: white;
-    height: 4px;
-    border-radius: 2px;
-    display: block;
-    transition: all 0.3s ease;
-  }
+      /* Hamburger fisso esattamente al centro verticale e orizzontale */
+      .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        width: 35px;
+        height: 30px;
+        justify-content: space-between;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 11000;
+      }
+      .menu-toggle span {
+        background: white;
+        height: 4px;
+        border-radius: 2px;
+        display: block;
+        transition: all 0.3s ease;
+      }
 
-  /* Menu popup centrato */
-  nav.sticky-nav ul {
-    display: none;
-    flex-direction: column;
-    background: linear-gradient(135deg, #FF7E5F, #FEB47B);
-    position: fixed;
-    top: 45px;
-    left: 50%;
-    transform: translateX(-50%, -50%);
-    width: 1600px;
-    padding: 10px;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    text-align: center;
-  }
-  nav.sticky-nav ul.show {
-    display: flex;
-  }
-  nav.sticky-nav ul li {
-    margin: 15px 0;
-  }
-  nav.sticky-nav ul li a {
-    color: white;
-    font-weight: 700;
-    font-size: 1.3rem;
-    text-decoration: none;
-  }
-}
+      /* Menu popup centrato */
+      nav.sticky-nav ul {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90vw;
+        max-width: 320px;
+        padding: 15px 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 10000;
+        text-align: center;
+      }
+      nav.sticky-nav ul.show {
+        display: flex;
+      }
+      nav.sticky-nav ul li {
+        margin: 15px 0;
+      }
+      nav.sticky-nav ul li a {
+        color: white;
+        font-weight: 700;
+        font-size: 1.3rem;
+        text-decoration: none;
+      }
+    }
 
     main > h1 {
       max-width: 420px;
@@ -242,30 +243,35 @@
       text-decoration: underline;
       outline: none;
     }
+
+    /* Focus outline per accessibilità */
+    a:focus-visible, button:focus-visible, .menu-toggle:focus-visible {
+      outline: 3px solid #FEB47B;
+      outline-offset: 3px;
+    }
   </style>
 </head>
 <body>
 
   <nav class="sticky-nav" role="navigation" aria-label="Menu principale">
-  <div
-    class="menu-toggle"
-    id="menu-toggle"
-    aria-label="Toggle menu"
-    aria-expanded="false"
-    role="button"
-    tabindex="0"
-  >
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <ul id="menu">
-    <li><a href="index.html#bio">Chi sono</a></li>
-    <li><a href="cv.html">Curriculum</a></li>
-    <li><a href="contattami.html" aria-current="page">Contattami</a></li>
-  </ul>
-</nav>
-
+    <div
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      role="button"
+      tabindex="0"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="menu">
+      <li><a href="index.html#bio">Chi sono</a></li>
+      <li><a href="cv.html">Curriculum</a></li>
+      <li><a href="contattami.html" aria-current="page">Contattami</a></li>
+    </ul>
+  </nav>
 
   <main>
     <h1>Contattami</h1>
@@ -299,23 +305,31 @@
     </p>
   </footer>
 
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
 
-  menuToggle.addEventListener('click', () => {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-    menuToggle.setAttribute('aria-expanded', !expanded);
-    menu.classList.toggle('show');
-  });
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('show');
+    });
 
-  menuToggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      menuToggle.click();
-    }
-  });
-</script>
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
+      }
+    });
+
+    // Chiude il menu quando si clicca su un link (mobile)
+    document.querySelectorAll('#menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
 
 </body>
 </html>
