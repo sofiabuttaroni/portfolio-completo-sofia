@@ -26,6 +26,7 @@ nav.sticky-nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
 }
 
 nav.sticky-nav ul {
@@ -45,6 +46,8 @@ nav.sticky-nav ul li a {
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
+    margin: 0 auto;
+    position:relative
   }
   nav.sticky-nav ul {
     display: none;
