@@ -22,6 +22,12 @@ Il sito presenta una breve biografia, le mie competenze professionali e artistic
 - Link esterni aperti in nuove schede (`target="_blank"`) con attributo `rel="noopener"` per la sicurezza
 
 ---
+# Nota importante
+
+Il file SCSS `assets/css/style.scss` è incluso nel progetto e presente nel repository GitHub a questo link:  
+https://github.com/sofiabuttaroni/portfolio-completo-sofia/blob/main/assets/css/style.scss
+
+Il CSS che si vede è generato da questo file SCSS.
 
 ## Come eseguire il progetto
 
